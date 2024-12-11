@@ -1,19 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM fully loaded and parsed'); // Ensure DOM is ready
+    console.log('DOM fully loaded and parsed'); 
 
-    // Button Hover Effects
     const ctaButtons = document.querySelectorAll('.btn');
-    console.log(`Found ${ctaButtons.length} buttons with the class ".btn"`); // Log the number of buttons found
+    console.log(`Found ${ctaButtons.length} buttons with the class ".btn"`); 
 
     if (ctaButtons.length > 0) {
         ctaButtons.forEach((button) => {
             button.addEventListener('mouseenter', () => {
-                button.classList.add('hover-effect'); // Add hover effect class
+                button.classList.add('hover-effect'); 
                 console.log('Button hover in:', button);
             });
 
             button.addEventListener('mouseleave', () => {
-                button.classList.remove('hover-effect'); // Remove hover effect class
+                button.classList.remove('hover-effect'); 
                 console.log('Button hover out:', button);
             });
         });
@@ -27,8 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active'); // Toggles visibility of the menu
-            console.log('Hamburger menu toggled:', navMenu.classList.contains('active')); // Log menu toggle state
+            navMenu.classList.toggle('active'); 
+            console.log('Hamburger menu toggled:', navMenu.classList.contains('active')); 
         });
     } else {
         console.error('Menu toggle button or navigation menu element not found.');

@@ -41,6 +41,32 @@ header .cta {
     margin-right: 20px;
 }
 
+header .menu-toggle {
+    display: none; 
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+}
+
+nav a:hover {
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 4px;
+}
+
 .hero {
     display: flex;
     flex-direction: column;
@@ -94,12 +120,26 @@ header .cta {
     font-weight: bold;
     margin: 10px;
     transition: transform 0.2s, background-color 0.2s;
-    display: inline-block;
+    z-index: 2;
 }
 
 .hero .btn:hover {
-    background-color: #0056b3; 
-    transform: scale(1.05); 
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.hover-effect {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+
+@media (max-width: 768px) {
+    .hero .btn {
+        width: 100%;
+        padding: 12px 0;
+        text-align: center;
+    }
 }
 
 section {
@@ -168,15 +208,6 @@ footer .social a {
     display: block; 
 }
 
-header .menu-toggle {
-    display: none; 
-    font-size: 24px;
-    background: none;
-    border: none;
-    color: #ffffff;
-    cursor: pointer;
-}
-
 @media (max-width: 768px) {
     header {
         flex-wrap: wrap;
@@ -185,29 +216,19 @@ header .menu-toggle {
     nav {
         display: none; 
         flex-direction: column;
-        width: 100%;
         gap: 10px;
         background-color: #1a1a1d;
         padding: 10px;
         border-radius: 8px;
+        transition: all 0.3s ease-in-out; 
     }
 
-    nav a {
-        padding: 10px;
-        border-radius: 4px;
-    }
-
-    nav a:hover {
-        background-color: #007bff;
-        color: #ffffff;
+    nav.active {
+        display: flex; 
     }
 
     header .menu-toggle {
         display: block; 
-    }
-
-    nav.active {
-        display: flex;
     }
 
     .dropdown-content {
@@ -228,14 +249,43 @@ header .menu-toggle {
     }
 }
 
-.hero .btn {
-    background-color: #007bff;
-    color: #ffffff;
-    text-align: center;
-    width: 100%; 
-    padding: 12px 0;
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
 
-.hero .btn:hover {
-    background-color: #0056b3;
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1a1a1d;
+    min-width: 160px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    top: 100%; 
+    left: 0;  
+}
+
+.dropdown-content a {
+    color: #ffffff;
+    padding: 10px 12px;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.dropdown-content a:hover {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover {
+    display: block;
 }
