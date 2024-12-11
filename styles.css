@@ -1,0 +1,241 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0e0e10;
+    color: #ffffff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #1a1a1d;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header a {
+    text-decoration: none;
+    color: #007bff;
+    margin: 0 15px;
+    font-weight: 600;
+}
+
+header .cta {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.header-logo {
+    height: 60px;
+    margin-right: 20px;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    background: url('images/background.jpg') no-repeat center/cover;
+    text-align: center;
+    position: relative;
+    color: #ffffff;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-logo {
+    width: 150px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin: 0;
+    color: #ffffff;
+    z-index: 2;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    color: #d1d1d1;
+    z-index: 2;
+}
+
+.hero .btn {
+    text-decoration: none;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 25px;
+    font-weight: bold;
+    margin: 10px;
+    transition: transform 0.2s, background-color 0.2s;
+    display: inline-block;
+}
+
+.hero .btn:hover {
+    background-color: #0056b3; /* Hover effect */
+    transform: scale(1.05); /* Slight zoom */
+}
+
+section {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.about, .tokenomics, .roadmap {
+    background-color: #1a1a1d;
+    margin: 20px 0;
+    border-radius: 15px;
+    padding: 40px;
+}
+
+h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #1a1a1d;
+    padding: 20px 10%;
+    text-align: center;
+}
+
+footer .social a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1a1a1d;
+    min-width: 160px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    top: 50px; 
+    left: 0;
+}
+
+.dropdown-content a {
+    color: #ffffff;
+    padding: 10px 12px;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.dropdown-content a:hover {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; 
+}
+
+header .menu-toggle {
+    display: none; 
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    nav {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        background-color: #1a1a1d;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    nav a {
+        padding: 10px;
+        border-radius: 4px;
+    }
+
+    nav a:hover {
+        background-color: #007bff;
+        color: #ffffff;
+    }
+
+    header .menu-toggle {
+        display: block; 
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .dropdown-content {
+        position: static;
+        background-color: #1a1a1d;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .dropdown-content a {
+        padding: 10px;
+        background-color: #1a1a1d;
+        border-radius: 4px;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #007bff;
+    }
+}
+
+.hero .btn {
+    background-color: #007bff;
+    color: #ffffff;
+    text-align: center;
+    width: 100%; /* Full-width buttons on smaller screens */
+    padding: 12px 0; /* Adjust padding for better touch usability */
+}
+
+.hero .btn:hover {
+    background-color: #0056b3;
+}
